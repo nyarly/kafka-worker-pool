@@ -61,6 +61,15 @@ When the work is completed,
 it publishes "completed" and exits.
 (It's restarted and goes through its boot process.)
 
+Note that workers use
+the low level Kafka consumer interface
+so that they can control when
+their topic offets are updated.
+Effectively, offset updates
+are held until a work order commit cycle completes,
+so that a dying worker can
+pick back up at a checkpoint.
+
 ### Conflicts
 
 If there is one other "claimed" event,
