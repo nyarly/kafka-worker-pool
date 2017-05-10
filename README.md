@@ -53,7 +53,7 @@ besides "claimed" and "completed":
 If no events are on the coordination topic
 for the newly read work order,
 the worker publishes a "claimed" event.
-Then it consumers the coordination topic again.
+Then it consumes the coordination topic again.
 If there's no other "claimed" events,
 it publishes a "committed" event
 and starts work.
